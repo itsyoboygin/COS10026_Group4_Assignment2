@@ -1,0 +1,214 @@
+/* header
+---------------------------------------------- */
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1{
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+    font-weight:bold
+}
+
+nav {
+    /* fixed, centered navbar - solid background and consistent width */
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+
+    background: #ffffff;
+    border-radius: 20px;
+    /* match other content width (most sections use 800px) */
+    width: calc(100%);
+    max-width: 800px;
+    padding: 1.2em 2em;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 32px rgba(106,17,203,0.15), 0 1.5px 8px rgba(37,117,252,0.08);
+    /* use a subtle neutral border when background is solid */
+    border: 1.5px solid rgba(0,0,0,0.06);
+    transition: box-shadow 0.3s, border-color 0.3s, top 0.2s;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+nav ul li {
+    background: rgba(106,17,203,0.08);
+    border-radius: 12px;
+    padding: 0.5em 1em;
+    margin: 0 0.3em;
+    transition: background 0.3s, box-shadow 0.3s;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(37,117,252,0.08);
+    display: inline-block;
+}
+
+nav ul li:hover {
+    background: rgb(239, 181, 239);
+    box-shadow: 0 4px 16px rgba(106,17,203,0.18);
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    background: #fff;
+    border-radius: 2px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transition: width 0.3s, left 0.3s;
+}
+
+nav a:hover {
+    color: black;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 12px 40px rgba(106,17,203,0.25), 0 2px 12px rgba(37,117,252,0.15);
+}
+
+nav a:hover::after {
+    width: 80%;
+    left: 10%;
+    background: rgb(224, 146, 159);
+}
+
+/* ensure page content isn't hidden under the fixed navbar */
+body {
+    padding-top: 10rem;
+}
+
+/* footer
+---------------------------------------------- */
+footer{
+    background: rgba(106,17,203,0.08);
+    border-top: 2px solid rgba(195,117,143);
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 8px 32px rgba(106,17,203,0.15), 0 1.5px 8px rgba(37,117,252,0.08);
+    backdrop-filter: blur(10px);
+    padding: 1.5em 0;
+    text-align: center;
+    margin-top:2em;
+}
+
+.footer-button {
+    display: inline-block;
+    background: white;
+    color: rgb(195, 117, 143)te;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7em 1.5em;
+    margin-top: 1em;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(195, 117, 143, 0.6);
+}
+
+.footer-button:hover {
+    background: rgb(224, 146, 159);
+    box-shadow: 0 8px 16px rgba(224, 146, 159, 0.8);
+}
+
+/* index.html
+---------------------------------------------- */
+.index-logo {
+    display: block;
+    margin: 2em auto;
+    max-width: 45%;
+    height: auto;
+    box-shadow: 0 4px 16px rgba(106,17,203,0.10);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.index-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(239, 181, 239), 0 4px 16px rgba(37,117,252,0.10);
+}
+
+figcaption {
+    font-style: italic;
+    text-align: center;
+    margin-top: 0.5em;
+    color: #555;
+    font-size: 0.9em;
+}
+
+#company-introduction {
+    max-width: 800px;
+    margin: 1.5em auto 1.5em auto;
+    padding: 2em;
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(106,17,203,0.15), 0 1.5px 8px rgba(37,117,252,0.08);
+    backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(255,255,255,0.35);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+#our-values {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 2em;
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(106,17,203,0.15), 0 1.5px 8px rgba(37,117,252,0.08);
+    backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(255,255,255,0.35);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+#career-cta {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 2em;
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(106,17,203,0.15), 0 1.5px 8px rgba(37,117,252,0.08);
+    backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(255,255,255,0.35);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+#company-introduction:hover,
+#our-values:hover,
+#career-cta:hover {
+    transform: translateY(5px);
+    animation: glow 1.5s infinite alternate;
+}
+
+.cta-link {
+    display: inline-block;
+    background: rgb(195, 117, 143);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5em 1em;
+    margin-top: 1em;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(195, 117, 143, 0.6);
+}
