@@ -4,6 +4,7 @@
     include 'nav.inc';
 ?>
 
+<body>
     <main>
         <article id="company-introduction">
             <h2>Pioneering Algorithms, Secure Future</h2>

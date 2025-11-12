@@ -7,4 +7,3 @@
     <link rel="stylesheet" href="../styles/styles.css">
     <title><?php echo $pageTitle; ?></title>
 </head>
-<body>

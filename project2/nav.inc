@@ -1,10 +1,10 @@
         <nav>
             <div>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="jobs.html">Jobs</a></li>
-                    <li><a href="apply.html">Apply</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="jobs.php">Jobs</a></li>
+                    <li><a href="apply.php">Apply</a></li>
+                    <li><a href="about.php">About</a></li>
                 </ul>
             </div>
             <div>
