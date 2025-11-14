@@ -293,6 +293,52 @@ form {
     outline: none;
 }
 
+/* Fieldset (grouped controls like Gender) should visually match other inputs
+   but be shrink-to-fit (minimal width) and only show the highlighted focus
+   style when one of its children is focused. */
+form fieldset {
+    display: inline-block;      /* shrink-to-fit */
+    width: -moz-fit-content;
+    width: fit-content;         /* make the fieldset only as wide as its contents */
+    white-space: nowrap;        /* keep radios on one line and avoid wrapping */
+    max-width: 100%;            /* don't overflow on very small screens */
+    min-width: 0;               /* allow it to be very small when needed */
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 8px;         /* match other inputs' rounded corners */
+    padding: 0.5em 0.75em;
+    background: #fff;
+    font-size: 1em;
+    margin-top: 0.3em;
+    margin-bottom: 0.5em;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    vertical-align: top;
+}
+
+form fieldset:focus {
+    outline: none;
+}
+
+form fieldset legend {
+    padding: 0 0.5em;
+    font-weight: normal;
+}
+
+/* apply highlight when any child control is focused */
+form fieldset:focus-within {
+    border-color: rgb(195, 117, 143);
+    box-shadow: 2px 2px 8px rgba(195, 117, 143, 0.6);
+    outline: none;
+}
+
+/* Make inputs, selects and textareas consistently full-width */
+.form-input,
+select.form-input,
+textarea.form-input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .button {
     background: rgb(195, 117, 143);
     color: white;

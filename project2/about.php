@@ -94,7 +94,6 @@
                 </tbody>
             </table>
         </section>
-        
     </main>
 
 <?php include 'footer.inc'; ?>

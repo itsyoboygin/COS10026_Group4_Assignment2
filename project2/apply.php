@@ -5,12 +5,16 @@
 ?>
 
 <body>
-    <form method="post" action="https://mercury.swin.edu.au/it000000/formtest.php">
+    <form method="post" action="process_eoi.php" validate="novalidate">
     <div>
         <div>
             <p>
                 <label for="job-ref">Job Reference Number</label></br>
-                <input class="form-input" type="text" id="job-ref" name="job-ref" pattern="[A-Za-z0-9]{5}" placeholder="5 alpha characters" title="Must be exactly 5 alphanumeric characters" required>
+                <select class="form-input" id="job-ref" name="job-ref" required>
+                    <option value="" disabled selected>Select a job reference</option>
+                    <option value="SDV01">SDV01 - Software Developer</option>
+                    <option value="CLE06">CLE06 - Cloud Engineer</option>
+                </select>
             </p>
         </div>
         <div>
@@ -33,13 +37,15 @@
         </div>
         <div>
             <p>
-                <label for="gender">Gender</label></br>
-                <input class="form-select" type="radio" id="male" name="gender" value="male" checked>
-                <label for="male">Male</label>
-                <input class="form-select" type="radio" id="female" name="gender" value="female">
-                <label for="female">Female</label>
-                <input class="form-select" type="radio" id="other" name="gender" value="other">
-                <label for="other">Other</label>
+                <fieldset>
+                    <legend>Gender</legend>
+                    <input class="form-select" type="radio" id="male" name="gender" value="male" checked>
+                    <label for="male">Male</label>
+                    <input class="form-select" type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input class="form-select" type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </fieldset>
             </p>
         </div>
     </div>
@@ -80,13 +86,13 @@
     <div>
         <p>
             <label for="email">Email</label></br>
-            <input class="form-input" type="email" id="email" name="email" placeholder="103847381@student.swin.edu.au" required>
+            <input class="form-input" type="email" id="email" name="email" placeholder="103847381@student.swin.edu.au" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter a valid email address" required>
         </p>
     </div>
     <div>
         <p>
             <label for="phone">Phone Number</label></br>
-            <input class="form-input" type="tel" id="phone" name="phone" pattern="[0-9]{8,12}" placeholder="8-12 digits" title="8 to 12 digits, or spaces" required>
+            <input class="form-input" type="tel" id="phone" name="phone" pattern="[\d\s()+-]{8,15}" placeholder="8-15 digits, may include spaces or +()-" title="8 to 15 characters: digits, spaces, +, ( ), - allowed" required>
         </p>
     </div>
     <div>
@@ -98,6 +104,8 @@
             <label for="skill2">MySQL</label>
             <input type="checkbox" id="skill3" name="skills[]" value="aws">
             <label for="skill3">AWS Services</label>
+            <input type="checkbox" id="skill4" name="skills[]" value="other">
+            <label for="skill4">Other</label>
         </p>
     </div>
     <div>
