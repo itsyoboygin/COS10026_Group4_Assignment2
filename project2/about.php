@@ -35,21 +35,24 @@
             
             <ul>
                 <li>
-                    <p><strong>Le Thanh Dat (105681112):</strong></p>
+                    <p><strong>Le Thanh Dat - 105681112 (dropped):</strong></p>
                     <ul>
                         <li>Group Leader, Project Coordinator, Home page and submissions.</li>
                     </ul>
                 </li>
                 <li>
-                    <p><strong>Nguyen Nhu Tuan Long (106216078):</strong></p>
+                    <p><strong>Nguyen Nhu Tuan Long - 106216078:</strong></p>
                     <ul>
                         <li>Quality Controller, Job description page, Group details page, and Discussion board questions.</li>
+                        <li>Inc. files, login and manager portal pages, <strong>user</strong> and <strong>jobs</strong> tables for Login and Job Description Pages.</li>
                     </ul>
                 </li>
                 <li>
-                    <p><strong>Do Vu Bao Phuc (103847381):</strong></p>
+                    <p><strong>Do Vu Bao Phuc - 103847381:</strong></p>
                     <ul>
                         <li>Project Designer, Job Application Page, Question Poster.</li>
+                        <li>process_eoi.php and EOI table; HR Manager Queries Portal, manage.php.  </li>
+                        <li>Tables and data setup in settings.php.</li>
                     </ul>
                 </li>
             </ul>
