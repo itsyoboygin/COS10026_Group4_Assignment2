@@ -5,7 +5,7 @@
 ?>
 
 <body>
-    <form method="post" action="process_eoi.php" validate="novalidate">
+    <form method="post" action="process_eoi.php" novalidate="novalidate">
     <div>
         <div>
             <p>
@@ -92,7 +92,7 @@
     <div>
         <p>
             <label for="phone">Phone Number</label></br>
-            <input class="form-input" type="tel" id="phone" name="phone" pattern="[\d\s()+-]{8,15}" placeholder="8-15 digits, may include spaces or +()-" title="8 to 15 characters: digits, spaces, +, ( ), - allowed" required>
+            <input class="form-input" type="tel" id="phone" name="phone" pattern="[\d\s()+-]{8,12}" placeholder="8-12 digits, may include spaces or +()-" title="8 to 12 characters: digits, spaces, +, ( ), - allowed" required>
         </p>
     </div>
     <div>

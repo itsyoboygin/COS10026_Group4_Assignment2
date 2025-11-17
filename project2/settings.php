@@ -9,5 +9,4 @@ $conn = mysqli_connect($host, $user, $pwd, $sql_db);
 if (!mysqli_connect($host, $user, $pwd, $sql_db)) {
     die("<p style='color:red;'>Database connection failed: </p>" . mysqli_connect_error());
 }
-echo "<p style='color:green;'>Database connection successful!</p>";
 ?>

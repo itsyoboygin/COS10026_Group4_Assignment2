@@ -40,7 +40,7 @@
             <h2>Join Our Team</h2>
             <p>Are you passionate about solving complex problems with technology? AlgoWeave is looking for top talent in software development and Cloud engineering.</p>
             <p>Explore our current career opportunities today and become part of the AlgoWeave team!</p>
-            <p><a href="jobs.html"><button class="cta-link">View Current Job Openings</button></a></p>
+            <p><a href="jobs.php"><button class="cta-link">View Current Job Openings</button></a></p>
         </section>
 
     </main>

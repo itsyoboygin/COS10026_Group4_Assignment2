@@ -125,6 +125,31 @@ if (!mysqli_query($conn, $create_sql)) {
     exit();
 }
 
+// Seed table with default records if it's empty
+$cntRes = mysqli_query($conn, "SELECT COUNT(*) AS cnt FROM EOI");
+if ($cntRes) {
+    $cntRow = mysqli_fetch_assoc($cntRes);
+    if (isset($cntRow['cnt']) && intval($cntRow['cnt']) === 0) {
+        $seed_sql = "INSERT INTO EOI (job_reference_number, first_name, last_name, dob, gender, street_address, suburb_town, state, postcode, email_address, phone_number, skills, other_skills_description) VALUES
+        ('SDV01','Alice','Smith','1990-05-12','female','1 Example St','Melbourne','VIC','3000','alice.smith@example.com','0400123001','machine-learning',''),
+        ('CLE06','Bob','Jones','1985-03-22','male','2 Example Rd','Sydney','NSW','2000','bob.jones@example.com','0400123002','aws',''),
+        ('SDV01','Carol','Nguyen','1992-07-08','female','3 Sample Ave','Brisbane','QLD','4000','carol.nguyen@example.com','0400123003','mysql',''),
+        ('CLE06','Daniel','Brown','1988-11-30','male','4 Test Blvd','Darwin','NT','0800','daniel.brown@example.com','0400123004','aws',''),
+        ('SDV01','Emma','Wilson','1995-01-17','female','5 Demo Ln','Perth','WA','6000','emma.wilson@example.com','0400123005','machine-learning,mysql',''),
+        ('CLE06','Frank','Taylor','1983-09-05','male','6 Trial St','Adelaide','SA','5000','frank.taylor@example.com','0400123006','aws',''),
+        ('SDV01','Grace','Lee','1991-06-21','female','7 Mock Rd','Hobart','TAS','7000','grace.lee@example.com','0400123007','mysql',''),
+        ('CLE06','Henry','Martin','1979-12-10','male','8 Fake Ave','Canberra','ACT','2600','henry.martin@example.com','0400123008','aws,machine-learning',''),
+        ('SDV01','Ivy','Patel','1993-04-02','female','9 Example Pl','Melbourne','VIC','3001','ivy.patel@example.com','0400123009','mysql',''),
+        ('CLE06','Jack','Olsen','1987-08-14','male','10 Demo Dr','Sydney','NSW','2001','jack.olsen@example.com','0400123010','machine-learning','')";
+
+        if (!mysqli_query($conn, $seed_sql)) {
+            // non-fatal: show warning but continue
+            error_log('Failed inserting seed EOI records: ' . mysqli_error($conn));
+        }
+    }
+    mysqli_free_result($cntRes);
+}
+
 // Prepare insert
 $skills_str = implode(',', array_map('clean', $skills));
 $insert_sql = "INSERT INTO EOI
