@@ -17,9 +17,6 @@ if ($conn->connect_error) {
         $sql = "SELECT * FROM jobs";
         $result = $conn->query($sql);
 
-        $sql = "SELECT * FROM jobs";
-        $result = $conn->query($sql);
-
         if ($result->num_rows > 0) {
             echo "<h1>Current Job Vacancies at AlgoWeave</h1>";
             while ($row = $result->fetch_assoc()) {
