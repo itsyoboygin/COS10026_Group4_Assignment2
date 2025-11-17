@@ -29,7 +29,7 @@ if ($conn->connect_error) {
                 echo "<h4>Key Responsibilities</h4><pre>{$row['responsibilities']}</pre>";
                 echo "<h4>Essential Requirements</h4><pre>{$row['essential_requirements']}</pre>";
                 echo "<h4>Preferable Requirements</h4><pre>{$row['preferable_requirements']}</pre>";
-                echo "<button class='job-button'>Apply</button>";
+                echo "<a href='apply.php'><button class='job-button'>Apply</button></a>";
                 echo "</section>";
 
             }
